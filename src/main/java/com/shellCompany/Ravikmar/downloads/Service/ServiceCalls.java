@@ -18,11 +18,7 @@ public class ServiceCalls {
 	
 	public Object getResponse(String url, HttpMethod methodType, Object requestObject, Class responseClassType) {
 		HttpEntity requestEntity = new HttpEntity(requestObject);
-		ResponseEntity responseEntity = restTemplate.exchange(
-			    url, 
-			    methodType, 
-			    requestEntity, 
-			    responseClassType);
+		ResponseEntity responseEntity = restTemplate.exchange(url, methodType, requestEntity, responseClassType);
 		return responseEntity.getBody();
 	}
 
